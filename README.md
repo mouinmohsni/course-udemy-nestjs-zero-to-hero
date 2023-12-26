@@ -104,5 +104,5 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 - `import { IsNumber, IsString } from 'class-validator';` - Validation
 
 ## help link
+[How to create custom (separate file) repository in NestJS 9 with TypeORM 0.3.x](https://stackoverflow.com/questions/74542474/how-to-create-custom-separate-file-repository-in-nestjs-9-with-typeorm-0-3-x)
 
-  <a href="https://stackoverflow.com/questions/74542474/how-to-create-custom-separate-file-repository-in-nestjs-9-with-typeorm-0-3-x">[How to create custom (separate file) repository in NestJS 9 with TypeORM 0.3.x]</a>
