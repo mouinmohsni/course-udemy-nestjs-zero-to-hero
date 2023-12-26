@@ -11,7 +11,7 @@ export class AuthController {
     return this.authService.signUp(newUserDtp);
   }
   @Post('/signin')
-  signIn(@Body() newUserDtp: NewUserDtp): Promise<string> {
+  signIn(@Body() newUserDtp: NewUserDtp): Promise<{ accessToken: string }> {
     return this.authService.signIn(newUserDtp);
   }
 }
