@@ -6,8 +6,9 @@ import {
   Param,
   Post,
   Put,
-  Query, UseGuards
-} from "@nestjs/common";
+  Query,
+  UseGuards,
+} from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { Task } from './task.entity';
 import {
@@ -34,7 +35,7 @@ export class TasksController {
   }
 
   @Delete('/:id')
-  deleteOnetask(@Param('id') id: string): Promise<void> {
+  deleteOneTask(@Param('id') id: string): Promise<void> {
     return this.tasksService.deleteTaskId(id);
   }
 
@@ -46,22 +47,13 @@ export class TasksController {
     return this.tasksService.update(updateTaskDTP, id);
   }
 
-  // @Get()
-  // getallTasks(@Query() filterDTo: GetTasksFilterDT): Task[] {
-  //   if (Object.keys(filterDTo).length) {
-  //     return this.tasksService.getTasksWithFilter(filterDTo);
-  //   } else {
-  //     return this.tasksService.allTasks();
-  //   }
-  // }
-
   @Get('')
-  getall(@Query() filterDTo: GetTasksFilterDT): Promise<Task[]> {
+  getAll(@Query() filterDTo: GetTasksFilterDT): Promise<Task[]> {
     return this.tasksService.getallTasks(filterDTo);
   }
 
   @Put('/:id/status')
-  updateTaskstates(
+  updateTaskStates(
     @Body() updateStatus: UpdateTaskStatusDto,
     @Param('id') id: string,
   ): Promise<Task> {
