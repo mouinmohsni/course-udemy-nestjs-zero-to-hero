@@ -1,5 +1,6 @@
 import { TaskStatus } from '../task-status.erum';
 import { IsEnum, IsNotEmpty } from 'class-validator';
+import { User } from "../../auth/user.entity";
 
 export class CreateTaskDtp {
   @IsNotEmpty()
@@ -16,6 +17,7 @@ export class UpdateTaskDTP {
   @IsEnum(TaskStatus)
   @IsNotEmpty()
   status: TaskStatus;
+  user: User;
 }
 
 export class UpdateTaskStatusDto {
