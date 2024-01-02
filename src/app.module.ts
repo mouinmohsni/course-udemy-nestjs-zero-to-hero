@@ -4,13 +4,16 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as process from 'process';
+import { configValidationSchema } from './config.shema';
 
-console.log(`.env.stage.${process.env.STAGE}`);
+console.log('.env.stage.' + process.env.STAGE);
 @Module({
   imports: [
     ConfigModule.forRoot({
-      // envFilePath: ['.env.stage.' + process.env.STAGE],
-      envFilePath: ['.env.stage.dev'],
+      //envFilePath: [`.env.stage.${process.env.STAGE}`],
+      envFilePath: [`.env.stage.${process.env.STAGE.trim()}`],
+      validationSchema: configValidationSchema,
+      //envFilePath: ['.env.stage.dev'],
     }),
     TasksModule,
     TypeOrmModule.forRootAsync({

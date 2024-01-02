@@ -72,6 +72,8 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 - ## env
 - `npm install -g cross-env`
 - `npm add @nestjs/config`
+- `npm add @hapi/joi`
+- `npm add -D @types/hapi__joi`
 
 ## Commands
 
